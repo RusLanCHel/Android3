@@ -1,4 +1,4 @@
-package com.example.mvptest
+package com.example.mvptest.lessonA
 
 class Model {
     private val counters = mutableListOf(0, 0, 0)

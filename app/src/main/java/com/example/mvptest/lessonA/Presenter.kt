@@ -1,4 +1,4 @@
-package com.example.mvptest
+package com.example.mvptest.lessonA
 
 class Presenter(private val view: View, private val model: Model) {
     fun incrementCounter(counterNo: Int){

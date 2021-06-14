@@ -1,10 +1,11 @@
-package com.example.mvptest
+package com.example.mvptest.lessonA
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.Button
+import com.example.mvptest.R
 
-class MainActivity : AppCompatActivity(), View{
+class MainActivity : AppCompatActivity(), View {
 
     private lateinit var button1: Button
     private lateinit var button2: Button
