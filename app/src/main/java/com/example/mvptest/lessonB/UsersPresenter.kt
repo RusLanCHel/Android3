@@ -1,9 +1,9 @@
 package com.example.mvptest.lessonB
 
+import com.github.terrakok.cicerone.Router
 import moxy.MvpPresenter
 
-class MainPresenter(val usersRepo: GithubUsersRepo): MvpPresenter<MainView>() {
-
+class UsersPresenter(val usersRepo: GithubUsersRepo, val router: Router) : MvpPresenter<UsersView>() {
     class UsersListPresenter : IUserListPresenter {
         val users = mutableListOf<GithubUser>()
         override var itemClickListener: ((UserItemView) -> Unit)? = null
@@ -24,13 +24,20 @@ class MainPresenter(val usersRepo: GithubUsersRepo): MvpPresenter<MainView>() {
         loadData()
 
         usersListPresenter.itemClickListener = { itemView ->
-            //TODO: переход на экран пользователя
+            //router.navigateTo()
+
         }
     }
 
     fun loadData() {
-        val users =  usersRepo.getUsers()
+        val users = usersRepo.getUsers()
         usersListPresenter.users.addAll(users)
         viewState.updateList()
     }
+
+    fun backPressed(): Boolean {
+        router.exit()
+        return true
+    }
+
 }

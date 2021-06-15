@@ -2,7 +2,6 @@ package com.example.mvptest.lessonB
 
 import android.os.Bundle
 import androidx.recyclerview.widget.LinearLayoutManager
-import com.example.mvptest.R
 import com.example.mvptest.databinding.ActivityMainBBinding
 import moxy.MvpAppCompatActivity
 import moxy.ktx.moxyPresenter
