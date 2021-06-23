@@ -31,9 +31,8 @@ class UserFragment: MvpAppCompatFragment(), UserView, BackButtonListener{
         vb = null
     }
 
-    override fun init() {
-        vb?.textViewUser?.text = GithubUsersRepo().getUsers()[loginCounter!!].toString()
-        GithubUsersRepo().getUsers()[loginCounter!!].toString()
+    override fun init(data: List<GithubUser>) {
+        vb?.textViewUser?.text = data[loginCounter?: 0].toString()
     }
 
     override fun backPressed(): Boolean {
